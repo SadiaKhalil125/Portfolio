@@ -16,8 +16,7 @@ const Hero = () => {
               Software Engineer & AI/ML Developer
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-              Final-year Software Engineering student with a dual focus in <strong>full-stack development</strong> and <strong>applied AI/ML</strong>, 
-              seeking to build intelligent and scalable software solutions.
+              Final-year Software Engineering student focused on full-stack development and applied AI/ML, working with LangChain, LangGraph, and n8n to build intelligent, automated solutions
             </p>
             
             {/* Contact Info */}

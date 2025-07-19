@@ -5,11 +5,19 @@ import { ExternalLink, Github, Globe, Bot, Heart, Activity, Code, FileText } fro
 
 const Projects = () => {
   const projects = [
+     {
+      title: 'Autonomous News-to-Video Agent ',
+      description: 'An autonomous agent that converts news articles into engaging videos using AI. It scrapes news, generates scripts, creates voiceovers, and compiles videos with visuals and subtitles.',
+      tech: ['Langgraph', 'Langchain', 'OpenAI API', 'Streamlit', 'Python', 'ElevenLabs','BeautifulSoup','Moviepy'],
+      github: 'https://github.com/SadiaKhalil125/Auto-News-Cast-Agent.git',
+      icon: <Code className="text-indigo-500 dark:text-indigo-400" size={24} />,
+      featured: true
+    },
     {
       title: 'AI Code Lab',
-      description: 'An intelligent coding platform with user authentication, topic selection, and AI-powered question generation. Features dual-pane code editor, real-time execution, and AI assistance for enhanced learning experience.',
+      description: 'An intelligent coding platform with user authentication, topic selection, and AI-powered question generation. Features dual-pane code editor, real-time AI based evaluation and scoring, and AI assistance for enhanced learning experience.',
       tech: ['React.js', 'FastAPI', 'OpenAI API', 'JWT Auth', 'Python', 'Material-UI'],
-      github: 'https://github.com/SadiaKhalil125/AI-Code-Lab',
+      github: 'https://github.com/SadiaKhalil125/AI-Code-Lab.git',
       icon: <Code className="text-indigo-500 dark:text-indigo-400" size={24} />,
       featured: true
     },

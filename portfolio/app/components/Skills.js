@@ -32,13 +32,13 @@ const Skills = () => {
     {
       title: 'AI & Machine Learning',
       icon: <Brain className="text-red-600 dark:text-red-400" size={24} />,
-      skills: ['PyTorch', 'CNNs', 'YOLOv5/v8', 'OpenCV', 'Neural Networks', 'LangChain', 'LLMs'],
+      skills: ['PyTorch', 'CNNs', 'YOLOv5/v8', 'OpenCV', 'Neural Networks', 'LangChain','LangGraph' ,'LLMs'],
       highlight: true
     },
     {
       title: 'Databases & Tools',
       icon: <Database className="text-orange-600 dark:text-orange-400" size={24} />,
-      skills: ['SQL Server', 'MongoDB', 'Firebase', 'Docker', 'Git', 'JIRA', 'Figma'],
+      skills: ['VS Code','Visual Studio','SQL Server', 'MongoDB', 'Firebase', 'Git', 'JIRA', 'Figma'],
       highlight: false
     }
   ]
