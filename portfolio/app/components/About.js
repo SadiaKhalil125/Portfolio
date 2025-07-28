@@ -57,7 +57,7 @@ const About = () => {
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2 mr-3"></div>
                   <p className="text-gray-700 dark:text-gray-300">
-                    <strong>DSA Mentor:</strong> Solved 100+ LeetCode problems, conducted hands-on sessions with 50+ students
+                    <strong>DSA Mentor:</strong> Solved 160+ LeetCode problems, conducted hands-on sessions with 50+ students
                   </p>
                 </div>
               </div>

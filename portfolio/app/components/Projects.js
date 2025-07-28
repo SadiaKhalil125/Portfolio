@@ -6,26 +6,42 @@ import { ExternalLink, Github, Globe, Bot, Heart, Activity, Code, FileText } fro
 const Projects = () => {
   const projects = [
      {
-      title: 'Autonomous News-to-Video Agent ',
-      description: 'An autonomous agent that converts news articles into engaging videos using AI. It scrapes news, generates scripts, creates voiceovers, and compiles videos with visuals and subtitles.',
-      tech: ['Langgraph', 'Langchain', 'OpenAI API', 'Streamlit', 'Python', 'ElevenLabs','BeautifulSoup','Moviepy'],
-      github: 'https://github.com/SadiaKhalil125/Auto-News-Cast-Agent.git',
-      icon: <Code className="text-indigo-500 dark:text-indigo-400" size={24} />,
-      featured: true
-    },
-    {
       title: 'AI Code Lab',
       description: 'An intelligent coding platform with user authentication, topic selection, and AI-powered question generation. Features dual-pane code editor, real-time AI based evaluation and scoring, and AI assistance for enhanced learning experience.',
-      tech: ['React.js', 'FastAPI', 'OpenAI API', 'JWT Auth', 'Python', 'Material-UI'],
+      tech: ['React.js', 'FastAPI', 'Llama 3', 'JWT Auth', 'Python', 'Material-UI'],
       github: 'https://github.com/SadiaKhalil125/AI-Code-Lab.git',
       icon: <Code className="text-indigo-500 dark:text-indigo-400" size={24} />,
       featured: true
     },
     {
+      title: 'Autonomous News-to-Video Agent ',
+      description: 'An autonomous agent that converts news articles into engaging videos using AI. It scrapes news, generates scripts, creates voiceovers, and compiles videos with visuals and subtitles.',
+      tech: ['Langgraph', 'Langchain', 'Grok', 'Llama','OpenAI API', 'Streamlit', 'Python', 'ElevenLabs','BeautifulSoup','Moviepy'],
+      github: 'https://github.com/SadiaKhalil125/Auto-News-Cast-Agent.git',
+      icon: <Code className="text-indigo-500 dark:text-indigo-400" size={24} />,
+      featured: true
+    },
+    {
+      title: 'Edu-Career Navigator Agent',
+      description: 'EduCareer Navigator is an intelligent ReAct agent using multi-agent orchestration to deliver personalized guidance. It routes queries to a University Agent or Career Agent based on user needs, using reasoning to adapt, switch, or combine agents for tailored educational and career recommendations. ',
+      tech: ['Langchain', 'Langgraph', 'OpenAI API', 'Streamlit', 'Python', 'Random Forest', 'Skicit-Learn'],
+      github: 'https://github.com/SadiaKhalil125/EduCareer-Navigator.git',
+      icon: <Code className="text-indigo-500 dark:text-indigo-400" size={24} />,
+      featured: true
+    },
+    {
+      title: 'MultiRAGBot',
+      description: 'It is a rag based bot who can answer any query provided the document, youtube video id and your concern, built purely using langchain ',
+      tech: ['LangChain', 'OpenAI', 'Streamlit', 'Youtube API', 'FAISS', 'Python'],
+      github: 'https://github.com/SadiaKhalil125/RAGBasedChatBot.git',
+      icon: <Bot className="text-purple-500 dark:text-purple-400" size={24} />,
+      featured: true
+    },
+    {
       title: 'GenAI Report Generator',
       description: 'An AI-based report generator with GPT integration, secure JWT authentication, and PDF export functionality. Built with responsive React UI using Material-UI for real-time report creation.',
-      tech: ['FastAPI', 'React.js', 'OpenAI API', 'ReportLab', 'JWT', 'Material-UI'],
-      github: 'https://github.com/SadiaKhalil125/AIReportGeneratorBackend.git',
+      tech: ['FastAPI', 'React.js','LangChain','OpenAI API', 'ReportLab', 'JWT', 'Material-UI'],
+      github: 'https://github.com/SadiaKhalil125/AIReportGenerator.git',
       icon: <FileText className="text-emerald-500 dark:text-emerald-400" size={24} />,
       featured: true
     },
@@ -46,14 +62,7 @@ const Projects = () => {
       icon: <Heart className="text-blue-500 dark:text-blue-400" size={24} />,
       featured: true
     },
-    {
-      title: 'AI Chatbot with Memory',
-      description: 'Built a memory-aware chatbot using LangChain and LLMs, integrated with Firestore for chat history and deployed with Flask + JS frontend.',
-      tech: ['LangChain', 'OpenAI', 'Flask', 'Firestore', 'JavaScript', 'Python'],
-      github: 'https://github.com/SadiaKhalil125/AIChatbot.git',
-      icon: <Bot className="text-purple-500 dark:text-purple-400" size={24} />,
-      featured: true
-    },
+    
     {
       title: 'Plant Disease Detection',
       description: 'Trained YOLOv5 and YOLOv8 object detection models achieving 95% accuracy on 30+ plant diseases. Deployed a Flask-based web app for real-time image predictions.',
