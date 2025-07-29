@@ -30,10 +30,10 @@ const Projects = () => {
       featured: true
     },
     {
-      title: 'MultiRAGBot',
-      description: 'It is a rag based bot who can answer any query provided the document, youtube video id and your concern, built purely using langchain ',
-      tech: ['LangChain', 'OpenAI', 'Streamlit', 'Youtube API', 'FAISS', 'Python'],
-      github: 'https://github.com/SadiaKhalil125/RAGBasedChatBot.git',
+      title: 'Queryly-AI',
+      description: 'Intelligent SQL Learning Platform  A comprehensive SQL learning platform with AI-powered ReAct agent featuring NLP-to-SQL converter (Llama 3.1), quiz generator (GPT-4), RAG document Q&A (Chroma), and SQL assistant. Built with Streamlit, LangChain, and MongoDB for persistent chat history.',
+      tech: ['LangChain', 'LangGraph','OpenAI', 'Streamlit', 'ChromaDB', 'Llama-4', 'Python'],
+      github: 'https://github.com/SadiaKhalil125/Queryly-AI.git',
       icon: <Bot className="text-purple-500 dark:text-purple-400" size={24} />,
       featured: true
     },
