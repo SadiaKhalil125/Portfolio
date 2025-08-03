@@ -38,10 +38,10 @@ const Projects = () => {
       featured: true
     },
     {
-      title: 'GenAI Report Generator',
-      description: 'An AI-based report generator with GPT integration, secure JWT authentication, and PDF export functionality. Built with responsive React UI using Material-UI for real-time report creation.',
-      tech: ['FastAPI', 'React.js','LangChain','OpenAI API', 'ReportLab', 'JWT', 'Material-UI'],
-      github: 'https://github.com/SadiaKhalil125/AIReportGenerator.git',
+      title: 'VocaHire-AI Interview Partner',
+      description: 'VocaHire is an AI-powered interview practice platform that simulates real-time interview sessions using GPT-3.5-turbo and voice recognition. It provides detailed feedback, tracks interview history, and supports body language analysis through pose detection. Built with React, FastAPI, and MongoDB.',
+      tech: ['FastAPI', 'React.js','LangChain','OpenAI API', 'Redux toolkit', 'Python', 'Lucide-React'],
+      github: 'https://github.com/SadiaKhalil125/VocaHire-AIInterviewPartner.git',
       icon: <FileText className="text-emerald-500 dark:text-emerald-400" size={24} />,
       featured: true
     },
