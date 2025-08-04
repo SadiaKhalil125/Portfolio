@@ -33,8 +33,8 @@ const About = () => {
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Objective</h3>
               </div>
               <p className="text-gray-700 dark:text-gray-300">
-                Final-year Software Engineering student with a dual focus in full-stack development 
-                and applied AI/ML, seeking to build intelligent and scalable software solutions.
+               Final-year Software Engineering student passionate about building intelligent full-stack applications. 
+               Experienced in React, FastAPI, and .NET with a strong focus on AI/ML using LangChain, LangGraph, and LLMs.
               </p>
             </div>
           </div>
@@ -57,7 +57,7 @@ const About = () => {
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2 mr-3"></div>
                   <p className="text-gray-700 dark:text-gray-300">
-                    <strong>DSA Mentor:</strong> Solved 160+ LeetCode problems, conducted hands-on sessions with 50+ students
+                    <strong>DSA Mentor:</strong> Solved 200+ LeetCode problems, conducted hands-on sessions with 50+ students
                   </p>
                 </div>
               </div>
