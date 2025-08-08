@@ -57,18 +57,20 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="#projects" 
-                className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 transition-colors hover-lift font-medium"
-              >
-                View My Projects
-              </a>
-              <a 
-                href="#contact" 
-                className="px-8 py-3 border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 rounded-lg hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transition-colors hover-lift font-medium"
-              >
-                Get In Touch
-              </a>
+             <a 
+  href="#projects" 
+  className="px-8 py-3 text-white rounded-lg bg-gradient-to-r from-purple-900 to-blue-900 hover:from-purple-600 hover:to-blue-600 transition-colors hover:scale-105 font-bold shadow-md"
+>
+  View My Projects
+</a>
+
+<a 
+  href="#contact" 
+  className="px-8 py-3 font-bold  text-white  rounded-lg bg-gradient-to-r from-purple-900 to-blue-900 hover:from-purple-600 hover:to-blue-600 transition-colors hover:scale-105 shadow-md"
+>
+  Get In Touch
+</a>
+
             </div>
           </div>
         </div>
