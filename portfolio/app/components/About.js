@@ -40,7 +40,7 @@ const About = () => {
               <div className="space-y-2">
                 <p className="font-medium text-gray-900 dark:text-white">B.Sc. in Software Engineering</p>
                 <p className="text-gray-600 dark:text-gray-400">PUCIT Lahore</p>
-                <p className="text-blue-600 dark:text-blue-400 font-semibold">CGPA: 3.91/4.00</p>
+                <p className="text-blue-600 dark:text-blue-400 font-semibold">CGPA: 3.90/4.00</p>
               </div>
             </motion.div>
 
