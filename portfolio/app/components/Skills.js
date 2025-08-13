@@ -107,7 +107,7 @@ const Skills = () => {
               <div className="space-y-3">
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-white rounded-full mt-2 mr-3"></div>
-                  <p><strong>Problem Solving:</strong> 100+ LeetCode problems and competitive programming</p>
+                  <p><strong>Problem Solving:</strong> 200+ LeetCode problems and competitive programming</p>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-white rounded-full mt-2 mr-3"></div>

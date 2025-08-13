@@ -93,15 +93,10 @@ const About = () => {
                 <div className="flex items-start space-x-3">
                     <div className="mt-1 flex-shrink-0"><Briefcase size={20} className="text-green-500" /></div>
                   <p className="text-gray-700 dark:text-gray-300">
-                    <strong>Event Management:</strong> Organized 2 tech events with 100+ attendees.
+                    <strong>Event Management:</strong> Organized tech events with 100+ attendees.
                   </p>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="mt-1 flex-shrink-0"><Award size={20} className="text-green-500" /></div>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    <strong>Hackathon Achievement:</strong> Ranked 7th in a national girls-only hackathon.
-                  </p>
-                </div>
+               
             </div>
           </motion.div>
         </div>
