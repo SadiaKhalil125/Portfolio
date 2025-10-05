@@ -39,7 +39,7 @@ const Skills = () => {
       title: 'Databases & Tools',
       icon: <Database className="text-orange-600 dark:text-orange-400" size={24} />,
       skills: ['VS Code','Visual Studio','SQL Server', 'MongoDB', 'Firebase', 'Git', 'JIRA', 'Figma', 'n8n'],
-      highlight: false
+      highlight: true
     }
   ]
 

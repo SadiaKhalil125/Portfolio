@@ -77,28 +77,43 @@ const About = () => {
               <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Experience Highlights</h3>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-x-8 gap-y-6">
-                <div className="flex items-start space-x-3">
-                  <div className="mt-1 flex-shrink-0"><Briefcase size={20} className="text-green-500" /></div>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    <strong>Machine Learning TA:</strong> Taught 50+ students, leading labs on CNNs, PyTorch, and YOLOv8.
-                  </p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="mt-1 flex-shrink-0"><User size={20} className="text-green-500" /></div>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    <strong>DSA Mentor:</strong> Solved 300+ LeetCode problems, conducted hands-on sessions with 50+ students.
-                  </p>
-                </div>
-                
-                <div className="flex items-start space-x-3">
-                    <div className="mt-1 flex-shrink-0"><Briefcase size={20} className="text-green-500" /></div>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    <strong>Event Management:</strong> Organized tech events with 100+ attendees.
-                  </p>
-                </div>
-               
-            </div>
+           <div className="grid md:grid-cols-2 gap-x-8 gap-y-6">
+  <div className="flex items-start space-x-3">
+    <div className="mt-1 flex-shrink-0"><Briefcase size={20} className="text-green-500" /></div>
+    <p className="text-gray-700 dark:text-gray-300">
+      <strong>Machine Learning TA:</strong> Taught 50+ students, leading labs on CNNs, PyTorch, and YOLOv8.
+    </p>
+  </div>
+
+  <div className="flex items-start space-x-3">
+    <div className="mt-1 flex-shrink-0"><User size={20} className="text-green-500" /></div>
+    <p className="text-gray-700 dark:text-gray-300">
+      <strong>DSA Mentor:</strong> Solved 300+ LeetCode problems, conducted hands-on sessions with 50+ students.
+    </p>
+  </div>
+
+  <div className="flex items-start space-x-3">
+    <div className="mt-1 flex-shrink-0"><Briefcase size={20} className="text-green-500" /></div>
+    <p className="text-gray-700 dark:text-gray-300">
+      <strong>Event Management:</strong> Organized tech events with 100+ attendees.
+    </p>
+  </div>
+
+  <div className="flex items-start space-x-3">
+    <div className="mt-1 flex-shrink-0"><Briefcase size={20} className="text-green-500" /></div>
+    <p className="text-gray-700 dark:text-gray-300">
+      <strong>Web Development TA:</strong> Guided 40+ students through React.js, Node.js, and full-stack projects.
+    </p>
+  </div>
+
+  <div className="flex items-start space-x-3">
+    <div className="mt-1 flex-shrink-0"><Briefcase size={20} className="text-green-500" /></div>
+    <p className="text-gray-700 dark:text-gray-300">
+      <strong>AI/ML Intern at Spiral Lab:</strong> Worked on AI agents and LLMs, developing and testing intelligent systems.
+    </p>
+  </div>
+</div>
+
           </motion.div>
         </div>
       </div>
