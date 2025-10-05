@@ -102,7 +102,7 @@ const About = () => {
   <div className="flex items-start space-x-3">
     <div className="mt-1 flex-shrink-0"><Briefcase size={20} className="text-green-500" /></div>
     <p className="text-gray-700 dark:text-gray-300">
-      <strong>Web Development TA:</strong> Guided 40+ students through React.js, Node.js, and full-stack projects.
+      <strong>Web Development TA:</strong> Guided 70+ students through React.js, Node.js, and full-stack projects.
     </p>
   </div>
 
