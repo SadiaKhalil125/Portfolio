@@ -87,9 +87,10 @@ const About = () => {
                 <div className="flex items-start space-x-3">
                   <div className="mt-1 flex-shrink-0"><User size={20} className="text-green-500" /></div>
                   <p className="text-gray-700 dark:text-gray-300">
-                    <strong>DSA Mentor:</strong> Solved 200+ LeetCode problems, conducted hands-on sessions with 50+ students.
+                    <strong>DSA Mentor:</strong> Solved 300+ LeetCode problems, conducted hands-on sessions with 50+ students.
                   </p>
                 </div>
+                
                 <div className="flex items-start space-x-3">
                     <div className="mt-1 flex-shrink-0"><Briefcase size={20} className="text-green-500" /></div>
                   <p className="text-gray-700 dark:text-gray-300">
