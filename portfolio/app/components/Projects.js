@@ -16,7 +16,7 @@ const Projects = () => {
     },
     {
       title: 'LUKE - AI Legal Integrator',
-      description: 'An advanced AI agent framework designed for legal professionals. Capabilities include answering legal questions with official citations/PDF links, performing clause audits, comparing document versions, and automating regulatory alerts.',
+      description: 'An advanced, live AI agent framework specialized for Peruvian Law. Designed for legal professionals, it answers questions with official citations/PDF links, performs clause audits, compares document versions, and automates regulatory alerts.',
       tech: ['RAG', 'OpenAI', 'OCR', 'Selenium', 'FastAPI', 'Python','TypeScript'],
       github: 'https://github.com/cleonruiz-netizen/LUKE.git',
       icon: <Scale size={24} />,

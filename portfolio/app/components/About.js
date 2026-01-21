@@ -111,7 +111,7 @@ const About = () => {
               <ExperienceItem 
                 icon={<Users size={18} />}
                 title="Teaching Assistant (TA)"
-                desc="Mentored students in Web Engineering (Next.js), ML (CNNs, PyTorch), and OOP/PF (C++)."
+                desc="Mentored students in Web Engineering (DOTNET C#), ML (CNNs, PyTorch), and OOP/PF (C++)."
               />
 
               <ExperienceItem 

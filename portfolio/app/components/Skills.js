@@ -117,7 +117,7 @@ const Skills = () => {
                 />
                 <StrengthItem 
                   label="Leadership" 
-                  value="Mentored 50+ students in ML/Web. Hackathon Organizer."
+                  value="Mentored 50+ students in DSA/ML/Web. Hackathon Organizer."
                 />
               </div>
             </div>
