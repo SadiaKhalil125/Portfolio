@@ -1,27 +1,30 @@
 'use client'
 
 import React from 'react'
-import { Mail, Phone, MapPin, Github, Linkedin, MessageCircle } from 'lucide-react'
+import { Mail, Phone, MapPin, Github, Linkedin, MessageSquare, ArrowRight } from 'lucide-react'
 
 const Contact = () => {
   const contactInfo = [
     {
-      icon: <Mail className="text-blue-600 dark:text-blue-400" size={20} />,
-      label: 'Email',
+      icon: <Mail size={18} />,
+      label: 'EMAIL_ADDRESS',
       value: 'sadiakhalil957@gmail.com',
-      link: 'mailto:sadiakhalil957@gmail.com'
+      link: 'mailto:sadiakhalil957@gmail.com',
+      color: 'text-cyan-600 dark:text-cyan-400'
     },
     {
-      icon: <Phone className="text-green-600 dark:text-green-400" size={20} />,
-      label: 'Phone',
+      icon: <Phone size={18} />,
+      label: 'PHONE_NUMBER',
       value: '+92 320 4522019',
-      link: 'tel:+923204522019'
+      link: 'tel:+923204522019',
+      color: 'text-emerald-600 dark:text-emerald-400'
     },
     {
-      icon: <MapPin className="text-red-600 dark:text-red-400" size={20} />,
-      label: 'Location',
+      icon: <MapPin size={18} />,
+      label: 'CURRENT_LOC',
       value: 'Lahore, Pakistan',
-      link: null
+      link: null,
+      color: 'text-rose-600 dark:text-rose-400'
     }
   ]
 
@@ -29,51 +32,57 @@ const Contact = () => {
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/sadia-khalil-851889261/',
-      icon: <Linkedin size={24} />,
-      color: 'bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600'
+      icon: <Linkedin size={20} />,
+      className: 'bg-[#0077b5] border-[#0077b5] text-white'
     },
     {
       name: 'GitHub',
       url: 'https://github.com/SadiaKhalil125',
-      icon: <Github size={24} />,
-      color: 'bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600'
+      icon: <Github size={20} />,
+      className: 'bg-[#24292e] dark:bg-white dark:text-[#24292e] text-white border-[#24292e] dark:border-white'
     }
   ]
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-900 transition-colors">
+    <section id="contact" className="py-20 bg-slate-50 dark:bg-[#0B1120] relative transition-colors">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 gradient-text">
-            Let's Connect
-          </h2>
-          <p className="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities, collaborations, or just having a chat about technology!
-          </p>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Contact Information */}
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg hover-lift transition-colors">
-              <div className="flex items-center mb-6">
-                <MessageCircle className="text-blue-600 dark:text-blue-400 mr-3" size={24} />
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Get In Touch</h3>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white">
+              Initialize <span className="text-cyan-600 dark:text-cyan-400">Connection</span>
+            </h2>
+            <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+              Open to new opportunities, collaborations, and technical discussions.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            
+            {/* Channel 1: Direct Contact */}
+            <div className="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-cyan-500/30 transition-all">
+              <div className="flex items-center mb-8">
+                <div className="p-2 bg-slate-100 dark:bg-slate-800 rounded mr-3">
+                    <MessageSquare className="text-slate-700 dark:text-slate-300" size={20} />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white font-mono uppercase">Direct Lines</h3>
               </div>
               
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {contactInfo.map((item, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    {item.icon}
-                    <div>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{item.label}</p>
+                  <div key={index} className="group">
+                    <p className="text-xs font-mono text-slate-400 dark:text-slate-500 mb-1">{item.label}</p>
+                    <div className="flex items-center space-x-3">
+                      <span className={`${item.color} group-hover:scale-110 transition-transform`}>{item.icon}</span>
                       {item.link ? (
                         <a 
                           href={item.link}
-                          className="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
+                          className="text-slate-800 dark:text-slate-200 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors font-medium text-lg"
                         >
                           {item.value}
                         </a>
                       ) : (
-                        <p className="text-gray-800 dark:text-gray-200 font-medium">{item.value}</p>
+                        <p className="text-slate-800 dark:text-slate-200 font-medium text-lg">{item.value}</p>
                       )}
                     </div>
                   </div>
@@ -81,55 +90,53 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Social Links & Quick Actions */}
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg hover-lift transition-colors">
-              <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">Connect on Social Media</h3>
-              
-              <div className="space-y-4 mb-6">
-                {socialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex items-center space-x-3 p-3 rounded-lg text-white transition-colors ${social.color}`}
-                  >
-                    {social.icon}
-                    <span className="font-medium">{social.name}</span>
-                  </a>
-                ))}
+            {/* Channel 2: Social & Signals */}
+            <div className="flex flex-col gap-6">
+                
+              {/* Social Block */}
+              <div className="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-cyan-500/30 transition-all flex-grow">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white font-mono uppercase mb-6">Network Nodes</h3>
+                
+                <div className="space-y-4">
+                  {socialLinks.map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center justify-between p-4 rounded-lg border transition-all hover:translate-x-1 ${social.className}`}
+                    >
+                      <div className="flex items-center space-x-3">
+                        {social.icon}
+                        <span className="font-bold">{social.name}</span>
+                      </div>
+                      <ArrowRight size={18} />
+                    </a>
+                  ))}
+                </div>
               </div>
 
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-700 dark:to-gray-600 p-4 rounded-lg">
-                <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
-                  <strong>Looking for:</strong>
-                </p>
-                <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                  <li>• Software Engineering opportunities</li>
-                  <li>• AI/ML development projects</li>
-                  <li>• Full-stack development roles</li>
-                  <li>• Open source collaborations</li>
+              {/* Status Block */}
+              <div className="bg-slate-900 dark:bg-cyan-950/20 p-6 rounded-xl border border-slate-800 dark:border-cyan-900/50">
+                <p className="text-xs font-mono text-cyan-500 mb-3">&gt; CURRENT_SEEKING_STATUS:</p>
+                <ul className="text-sm text-slate-300 dark:text-cyan-100 space-y-2 font-mono">
+                  <li className="flex items-center"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2"></span> Software Engineering Roles</li>
+                  <li className="flex items-center"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2"></span> AI/ML Development</li>
+                  <li className="flex items-center"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2"></span> Full-Stack Projects</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* Call to Action */}
+          {/* Master CTA */}
           <div className="mt-12 text-center">
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-700 dark:to-purple-700 text-white p-8 rounded-lg">
-              <h3 className="text-2xl font-bold mb-4">Ready to Work Together?</h3>
-              <p className="mb-6 opacity-90">
-                I'm excited to contribute to innovative projects and grow as a software engineer. 
-                Let's build something amazing together!
-              </p>
-              <a 
-                href="mailto:sadiakhalil957@gmail.com"
-                className="inline-flex items-center space-x-2 px-6 py-3 bg-white text-blue-600 rounded-lg hover:bg-gray-100 dark:bg-gray-100 dark:hover:bg-gray-200 transition-colors font-medium hover-lift"
-              >
-                <Mail size={20} />
-                <span>Send Me an Email</span>
-              </a>
-            </div>
+            <a 
+              href="mailto:sadiakhalil957@gmail.com"
+              className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-cyan-700 to-blue-700 hover:from-cyan-600 hover:to-blue-600 text-white rounded-lg transition-all hover:scale-105 shadow-[0_0_20px_rgba(8,145,178,0.3)] font-bold tracking-wide"
+            >
+              <Mail size={20} />
+              <span>TRANSMIT MESSAGE</span>
+            </a>
           </div>
         </div>
       </div>
@@ -137,4 +144,4 @@ const Contact = () => {
   )
 }
 
-export default Contact 
+export default Contact

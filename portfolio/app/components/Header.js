@@ -1,12 +1,22 @@
 'use client'
 
-import React, { useState } from 'react'
-import { Menu, X, Sun, Moon } from 'lucide-react'
+import React, { useState, useEffect } from 'react'
+import { Menu, X, Sun, Moon, Terminal } from 'lucide-react'
 import { useTheme } from '../contexts/ThemeContext'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const { darkMode, toggleTheme } = useTheme()
+
+  // Add shadow on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -17,11 +27,24 @@ const Header = () => {
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 transition-colors">
-      <nav className="container mx-auto px-4 py-4">
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
+        scrolled 
+          ? 'bg-white/90 dark:bg-[#0f172a]/90 backdrop-blur-md border-cyan-900/10 dark:border-cyan-500/20 py-3' 
+          : 'bg-transparent border-transparent py-5'
+      }`}
+    >
+      <nav className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          <div className="text-xl font-bold gradient-text">
-            Sadia Khalil
+          
+          {/* Logo Area */}
+          <div className="flex items-center gap-2 group cursor-pointer">
+            <div className="p-1.5 rounded bg-slate-900 dark:bg-cyan-500/10 border border-slate-700 dark:border-cyan-500/30 group-hover:border-cyan-500 transition-colors">
+              <Terminal size={20} className="text-white dark:text-cyan-400" />
+            </div>
+            <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white font-mono">
+              Sadia<span className="text-cyan-600 dark:text-cyan-400"></span>
+            </span>
           </div>
           
           {/* Desktop Navigation */}
@@ -30,58 +53,56 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium"
+                className="text-sm font-medium uppercase tracking-wider text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-200 relative group"
               >
                 {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-600 dark:bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
             
+            <div className="h-6 w-px bg-slate-300 dark:bg-slate-700 mx-2"></div>
+
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors border border-transparent hover:border-slate-300 dark:hover:border-slate-600"
               aria-label="Toggle theme"
             >
               {darkMode ? (
-                <Sun className="text-yellow-500" size={20} />
+                <Sun size={18} />
               ) : (
-                <Moon className="text-gray-700" size={20} />
+                <Moon size={18} />
               )}
             </button>
           </div>
 
           {/* Mobile Menu Button and Theme Toggle */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="md:hidden flex items-center space-x-4">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-              aria-label="Toggle theme"
+              className="text-slate-700 dark:text-slate-300"
             >
-              {darkMode ? (
-                <Sun className="text-yellow-500" size={20} />
-              ) : (
-                <Moon className="text-gray-700 dark:text-gray-300" size={20} />
-              )}
+              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
             
             <button
-              className="p-2 text-gray-700 dark:text-gray-300"
+              className="text-slate-900 dark:text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-gray-200 dark:border-gray-700">
+          <div className="md:hidden mt-4 py-4 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] absolute left-0 right-0 px-4 shadow-xl">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium"
+                  className="text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-medium py-2 border-l-2 border-transparent hover:border-cyan-500 pl-3 transition-all"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -95,4 +116,4 @@ const Header = () => {
   )
 }
 
-export default Header 
+export default Header

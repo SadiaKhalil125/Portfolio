@@ -1,124 +1,159 @@
 'use client'
 
 import React from 'react'
-import { GraduationCap, Target, Award, User, Briefcase } from 'lucide-react'
+import { GraduationCap, Target, Award, User, Briefcase, Code, Users, Terminal } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900 transition-colors">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+    <section id="about" className="py-20 bg-slate-50 dark:bg-[#0B1120] relative overflow-hidden transition-colors">
+      
+      {/* Tech Grid Background */}
+      <div className="absolute inset-0 z-0 opacity-[0.03] dark:opacity-[0.05]" 
+        style={{
+          backgroundImage: `linear-gradient(#64748b 1px, transparent 1px), linear-gradient(to right, #64748b 1px, transparent 1px)`,
+          backgroundSize: '40px 40px'
+        }}
+      ></div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 gradient-text">
-              About Me
+            <div className="inline-flex items-center justify-center p-2 mb-4 bg-cyan-500/10 rounded-lg">
+              <User className="text-cyan-600 dark:text-cyan-400" size={24} />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white">
+              About <span className="text-cyan-600 dark:text-cyan-400">Me</span>
             </h2>
-            <p className="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
-              A glimpse into my academic background, career goals, and key experiences.
+            <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-mono text-sm">
+              &gt; INITIALIZING PROFILE SUMMARY...
+              <br/>
+              &gt; LOADING ACADEMIC & CAREER DATA...
             </p>
           </motion.div>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
+            
+            {/* Education Card - Tech Style */}
             <motion.div
-              className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg hover-lift transition-shadow shadow-sm hover:shadow-lg"
+              className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-xl hover:border-cyan-500/50 transition-all hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] group"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="flex items-center mb-4">
-                <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-full mr-4">
-                  <GraduationCap className="text-blue-600 dark:text-blue-400" size={24} />
+              <div className="flex items-center mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
+                <div className="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg mr-4 group-hover:bg-cyan-500/10 transition-colors">
+                  <GraduationCap className="text-slate-700 dark:text-slate-300 group-hover:text-cyan-500" size={24} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Education</h3>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white uppercase tracking-wider">Education</h3>
               </div>
-              <div className="space-y-2">
-                <p className="font-medium text-gray-900 dark:text-white">B.Sc. in Software Engineering</p>
-                <p className="text-gray-600 dark:text-gray-400">PUCIT Lahore</p>
-                <p className="text-blue-600 dark:text-blue-400 font-semibold">CGPA: 3.90/4.00</p>
+              <div className="space-y-3 font-mono text-sm">
+                <p className="text-cyan-600 dark:text-cyan-400 font-bold">B.Sc. Software Engineering</p>
+                <p className="text-slate-600 dark:text-slate-400">PUCIT Lahore</p>
+                <div className="inline-block px-3 py-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded border border-emerald-500/20">
+                  CGPA: 3.91 / 4.00
+                </div>
               </div>
             </motion.div>
 
+            {/* Objective Card - Tech Style */}
             <motion.div
-              className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg hover-lift transition-shadow shadow-sm hover:shadow-lg"
+              className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-xl hover:border-cyan-500/50 transition-all hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] group"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="flex items-center mb-4">
-                <div className="p-2 bg-purple-100 dark:bg-purple-900/50 rounded-full mr-4">
-                  <Target className="text-purple-600 dark:text-purple-400" size={24} />
+              <div className="flex items-center mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
+                <div className="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg mr-4 group-hover:bg-cyan-500/10 transition-colors">
+                  <Target className="text-slate-700 dark:text-slate-300 group-hover:text-cyan-500" size={24} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Objective</h3>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white uppercase tracking-wider">Objective</h3>
               </div>
-              <p className="text-gray-700 dark:text-gray-300">
-               A highly motivated and results-oriented Software Engineering student seeking to leverage my skills in full-stack development and AI/ML to contribute to innovative projects.
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed border-l-2 border-cyan-500/30 pl-4">
+                Final-year Software Engineering student architecting full-stack and AI-driven applications using <span className="text-slate-900 dark:text-white font-medium">React, FastAPI, .NET, and LLMs</span>. Seeking a role as a <span className="text-cyan-600 dark:text-cyan-400 font-semibold">Web & AI/ML Engineer</span>.
               </p>
             </motion.div>
           </div>
 
+          {/* Experience Log Section */}
           <motion.div
-            className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg hover-lift transition-shadow"
+            className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-xl relative overflow-hidden"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center mb-6">
-              <div className="p-2 bg-green-100 dark:bg-green-900/50 rounded-full mr-4">
-                <Award className="text-green-600 dark:text-green-400" size={24} />
-              </div>
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Experience Highlights</h3>
+            {/* Decorative Top Bar */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500"></div>
+
+            <div className="flex items-center mb-8">
+              <Award className="text-cyan-600 dark:text-cyan-400 mr-3" size={24} />
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white uppercase tracking-wider">Experience Logs</h3>
             </div>
             
-           <div className="grid md:grid-cols-2 gap-x-8 gap-y-6">
-  <div className="flex items-start space-x-3">
-    <div className="mt-1 flex-shrink-0"><Briefcase size={20} className="text-green-500" /></div>
-    <p className="text-gray-700 dark:text-gray-300">
-      <strong>Machine Learning TA:</strong> Taught 50+ students, leading labs on CNNs, PyTorch, and YOLOv8.
-    </p>
-  </div>
+            <div className="grid md:grid-cols-2 gap-x-12 gap-y-8">
+              
+              <ExperienceItem 
+                icon={<Briefcase size={18} />}
+                title="Software Engineer @ Spiral Labs"
+                desc="Developed software products using modern JavaScript frameworks."
+              />
+              
 
-  <div className="flex items-start space-x-3">
-    <div className="mt-1 flex-shrink-0"><User size={20} className="text-green-500" /></div>
-    <p className="text-gray-700 dark:text-gray-300">
-      <strong>DSA Mentor:</strong> Solved 300+ LeetCode problems, conducted hands-on sessions with 50+ students.
-    </p>
-  </div>
+              <ExperienceItem 
+                icon={<Users size={18} />}
+                title="Teaching Assistant (TA)"
+                desc="Mentored students in Web Engineering (Next.js), ML (CNNs, PyTorch), and OOP/PF (C++)."
+              />
 
-  <div className="flex items-start space-x-3">
-    <div className="mt-1 flex-shrink-0"><Briefcase size={20} className="text-green-500" /></div>
-    <p className="text-gray-700 dark:text-gray-300">
-      <strong>Event Management:</strong> Organized tech events with 100+ attendees.
-    </p>
-  </div>
+              <ExperienceItem 
+                icon={<Terminal size={18} />}
+                title="DSA Mentor"
+                desc="Solved 350+ LeetCode problems and conducted sessions for peers."
+              />
 
-  <div className="flex items-start space-x-3">
-    <div className="mt-1 flex-shrink-0"><Briefcase size={20} className="text-green-500" /></div>
-    <p className="text-gray-700 dark:text-gray-300">
-      <strong>Web Development TA:</strong> Guided 70+ students through React.js, Node.js, and full-stack projects.
-    </p>
-  </div>
+              <ExperienceItem 
+                icon={<User size={18} />}
+                title="Class Representative"
+                desc="Liaised between students and faculty; advocated for peers throughout the degree."
+              />
 
-  <div className="flex items-start space-x-3">
-    <div className="mt-1 flex-shrink-0"><Briefcase size={20} className="text-green-500" /></div>
-    <p className="text-gray-700 dark:text-gray-300">
-      <strong>AI/ML Intern at Spiral Lab:</strong> Worked on AI agents and LLMs, developing and testing intelligent systems.
-    </p>
-  </div>
-</div>
-
+              <ExperienceItem 
+                icon={<Award size={18} />}
+                title="Events & Hackathons"
+                desc="Member of Event Management Society (Production Team) and hackathon participant."
+              />
+            </div>
           </motion.div>
         </div>
       </div>
     </section>
   )
 }
+
+// Helper Component for consistency
+const ExperienceItem = ({ icon, title, desc }) => (
+  <div className="flex items-start space-x-4 group">
+    <div className="mt-1 flex-shrink-0 p-2 bg-slate-100 dark:bg-slate-800 rounded text-slate-500 dark:text-slate-400 group-hover:text-cyan-500 group-hover:bg-cyan-500/10 transition-colors">
+      {icon}
+    </div>
+    <div>
+      <h4 className="font-bold text-slate-800 dark:text-slate-200 text-sm mb-1 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+        {title}
+      </h4>
+      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-l border-slate-200 dark:border-slate-700 pl-3">
+        {desc}
+      </p>
+    </div>
+  </div>
+)
 
 export default About
