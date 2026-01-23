@@ -42,7 +42,7 @@ const Header = () => {
             <div className="p-1.5 rounded bg-slate-900 dark:bg-cyan-500/10 border border-slate-700 dark:border-cyan-500/30 group-hover:border-cyan-500 transition-colors">
               <Terminal size={20} className="text-white dark:text-cyan-400" />
             </div>
-            <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white" style={{ fontFamily: 'Space Mono, monospace' }}>
+            <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white font-mono">
               Sadia<span className="text-cyan-600 dark:text-cyan-400"></span>
             </span>
           </div>

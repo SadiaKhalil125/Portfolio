@@ -35,7 +35,7 @@ const Hero = () => {
             </div>
 
             {/* Name */}
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-slate-900 dark:text-white" style={{ fontFamily: 'Space Mono, monospace' }}>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-slate-900 dark:text-white">
               Sadia <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-400 dark:to-blue-500">Khalil</span>
             </h1>
 
