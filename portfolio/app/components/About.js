@@ -58,7 +58,7 @@ const About = () => {
                 <p className="text-cyan-600 dark:text-cyan-400 font-bold">B.Sc. Software Engineering</p>
                 <p className="text-slate-600 dark:text-slate-400">PUCIT Lahore</p>
                 <div className="inline-block px-3 py-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded border border-emerald-500/20">
-                  CGPA: 3.91 / 4.00
+                  CGPA: 3.90 / 4.00
                 </div>
               </div>
             </motion.div>
@@ -117,7 +117,7 @@ const About = () => {
               <ExperienceItem 
                 icon={<Terminal size={18} />}
                 title="DSA Mentor"
-                desc="Solved 350+ LeetCode problems and conducted sessions for peers."
+                desc="Solved a number of LeetCode problems and conducted sessions for peers."
               />
 
               <ExperienceItem 

@@ -113,7 +113,7 @@ const Skills = () => {
               <div className="space-y-4">
                  <StrengthItem 
                   label="Algorithmic Logic" 
-                  value="350+ LeetCode Solved. Strong Data Structures grasp."
+                  value="A number of LeetCode problems solved. Strong Data Structures grasp."
                 />
                 <StrengthItem 
                   label="Leadership" 
