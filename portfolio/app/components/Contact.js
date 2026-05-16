@@ -1,143 +1,206 @@
 'use client'
 
-import React from 'react'
-import { Mail, Phone, MapPin, Github, Linkedin, MessageSquare, ArrowRight } from 'lucide-react'
+import React, { useState } from 'react'
+import { Mail, Phone, MapPin, Github, Linkedin, ArrowUpRight, Send } from 'lucide-react'
 
 const Contact = () => {
-  const contactInfo = [
-    {
-      icon: <Mail size={18} />,
-      label: 'EMAIL_ADDRESS',
-      value: 'sadiakhalil957@gmail.com',
-      link: 'mailto:sadiakhalil957@gmail.com',
-      color: 'text-cyan-600 dark:text-cyan-400'
-    },
-    {
-      icon: <Phone size={18} />,
-      label: 'PHONE_NUMBER',
-      value: '+92 320 4522019',
-      link: 'tel:+923204522019',
-      color: 'text-emerald-600 dark:text-emerald-400'
-    },
-    {
-      icon: <MapPin size={18} />,
-      label: 'CURRENT_LOC',
-      value: 'Lahore, Pakistan',
-      link: null,
-      color: 'text-rose-600 dark:text-rose-400'
-    }
-  ]
+  const [formState, setFormState] = useState({ name: '', email: '', message: '' })
+  const [sent, setSent] = useState(false)
 
-  const socialLinks = [
-    {
-      name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/sadia-khalil-851889261/',
-      icon: <Linkedin size={20} />,
-      className: 'bg-[#0077b5] border-[#0077b5] text-white'
-    },
-    {
-      name: 'GitHub',
-      url: 'https://github.com/SadiaKhalil125',
-      icon: <Github size={20} />,
-      className: 'bg-[#24292e] dark:bg-white dark:text-[#24292e] text-white border-[#24292e] dark:border-white'
-    }
-  ]
+  const handleChange = (e) => {
+    setFormState({ ...formState, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const { name, email, message } = formState
+    const mailtoLink = `mailto:sadiakhalil957@gmail.com?subject=Portfolio Inquiry from ${encodeURIComponent(name)}&body=${encodeURIComponent(`From: ${name}\nEmail: ${email}\n\n${message}`)}`
+    window.location.href = mailtoLink
+    setSent(true)
+  }
 
   return (
-    <section id="contact" className="py-20 bg-slate-50 dark:bg-[#0B1120] relative transition-colors">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white">
-              Initialize <span className="text-cyan-600 dark:text-cyan-400">Connection</span>
-            </h2>
-            <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Open to new opportunities, collaborations, and technical discussions.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            
-            {/* Channel 1: Direct Contact */}
-            <div className="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-cyan-500/30 transition-all">
-              <div className="flex items-center mb-8">
-                <div className="p-2 bg-slate-100 dark:bg-slate-800 rounded mr-3">
-                    <MessageSquare className="text-slate-700 dark:text-slate-300" size={20} />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white font-mono uppercase">Direct Lines</h3>
-              </div>
-              
-              <div className="space-y-6">
-                {contactInfo.map((item, index) => (
-                  <div key={index} className="group">
-                    <p className="text-xs font-mono text-slate-400 dark:text-slate-500 mb-1">{item.label}</p>
-                    <div className="flex items-center space-x-3">
-                      <span className={`${item.color} group-hover:scale-110 transition-transform`}>{item.icon}</span>
-                      {item.link ? (
-                        <a 
-                          href={item.link}
-                          className="text-slate-800 dark:text-slate-200 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors font-medium text-lg"
-                        >
-                          {item.value}
-                        </a>
-                      ) : (
-                        <p className="text-slate-800 dark:text-slate-200 font-medium text-lg">{item.value}</p>
-                      )}
-                    </div>
+    <section id="contact" className="py-28 lg:py-36 bg-white dark:bg-[#111009]">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10">
+
+        {/* Section header */}
+        <div className="mb-16">
+          <p className="section-label mb-3">Contact</p>
+          <h2 className="section-heading">Let's work together.</h2>
+          <p className="text-stone-600 dark:text-stone-400 text-base mt-4 max-w-lg leading-relaxed">
+            Open to software engineering roles, AI/ML projects, and meaningful collaborations.
+            My inbox is always open — let's talk.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-5 gap-12 items-start">
+
+          {/* Left: Contact info */}
+          <div className="lg:col-span-2 space-y-8">
+
+            {/* Contact details */}
+            <div className="space-y-5">
+              {[
+                {
+                  icon: <Mail size={16} strokeWidth={1.75} />,
+                  label: 'Email',
+                  value: 'sadiakhalil957@gmail.com',
+                  href: 'mailto:sadiakhalil957@gmail.com',
+                },
+                {
+                  icon: <Phone size={16} strokeWidth={1.75} />,
+                  label: 'Phone',
+                  value: '+92 320 4522019',
+                  href: 'tel:+923204522019',
+                },
+                {
+                  icon: <MapPin size={16} strokeWidth={1.75} />,
+                  label: 'Location',
+                  value: 'Lahore, Pakistan',
+                  href: null,
+                },
+              ].map((item) => (
+                <div key={item.label} className="flex items-center gap-4">
+                  <div className="p-2.5 rounded-xl bg-stone-100 dark:bg-[#1A1814] border border-stone-200 dark:border-[#252219] text-stone-500 dark:text-stone-400 flex-shrink-0">
+                    {item.icon}
                   </div>
+                  <div>
+                    <p className="text-xs text-stone-400 dark:text-stone-500 font-medium tracking-wide uppercase mb-0.5">{item.label}</p>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="text-stone-800 dark:text-stone-200 text-sm font-medium hover:text-[#9B8B6E] dark:hover:text-[#C4A882] transition-colors"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="text-stone-800 dark:text-stone-200 text-sm font-medium">{item.value}</p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Divider */}
+            <div className="h-px bg-stone-200 dark:bg-[#252219]" />
+
+            {/* Social links */}
+            <div>
+              <p className="text-xs text-stone-400 dark:text-stone-500 font-medium tracking-wide uppercase mb-4">Find me online</p>
+              <div className="space-y-3">
+                {[
+                  {
+                    name: 'GitHub',
+                    handle: 'SadiaKhalil125',
+                    url: 'https://github.com/SadiaKhalil125',
+                    icon: <Github size={16} strokeWidth={1.75} />,
+                  },
+                  {
+                    name: 'LinkedIn',
+                    handle: 'sadia-khalil-851889261',
+                    url: 'https://www.linkedin.com/in/sadia-khalil-851889261/',
+                    icon: <Linkedin size={16} strokeWidth={1.75} />,
+                  },
+                ].map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-4 card rounded-xl hover:shadow-sm dark:hover:shadow-[0_2px_12px_rgba(0,0,0,0.25)] transition-all duration-200 group"
+                  >
+                    <div className="flex items-center gap-3 text-stone-700 dark:text-stone-300">
+                      {social.icon}
+                      <div>
+                        <span className="text-sm font-medium group-hover:text-stone-900 dark:group-hover:text-stone-100 transition-colors">{social.name}</span>
+                        <p className="text-xs text-stone-400 dark:text-stone-500">@{social.handle.slice(0, 20)}</p>
+                      </div>
+                    </div>
+                    <ArrowUpRight
+                      size={15}
+                      strokeWidth={1.75}
+                      className="text-stone-400 dark:text-stone-500 group-hover:text-stone-900 dark:group-hover:text-stone-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200"
+                    />
+                  </a>
                 ))}
               </div>
             </div>
+          </div>
 
-            {/* Channel 2: Social & Signals */}
-            <div className="flex flex-col gap-6">
-                
-              {/* Social Block */}
-              <div className="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-cyan-500/30 transition-all flex-grow">
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white font-mono uppercase mb-6">Network Nodes</h3>
-                
-                <div className="space-y-4">
-                  {socialLinks.map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`flex items-center justify-between p-4 rounded-lg border transition-all hover:translate-x-1 ${social.className}`}
-                    >
-                      <div className="flex items-center space-x-3">
-                        {social.icon}
-                        <span className="font-bold">{social.name}</span>
-                      </div>
-                      <ArrowRight size={18} />
-                    </a>
-                  ))}
+          {/* Right: Form */}
+          <div className="lg:col-span-3">
+            <form onSubmit={handleSubmit} className="card p-8 space-y-5">
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label htmlFor="contact-name" className="block text-xs font-medium text-stone-500 dark:text-stone-400 uppercase tracking-wide mb-2">
+                    Name
+                  </label>
+                  <input
+                    id="contact-name"
+                    name="name"
+                    type="text"
+                    required
+                    value={formState.name}
+                    onChange={handleChange}
+                    placeholder="Your name"
+                    className="w-full px-4 py-3 rounded-lg bg-stone-50 dark:bg-[#161412] border border-stone-200 dark:border-[#2E2924] text-stone-900 dark:text-stone-100 text-sm placeholder-stone-400 dark:placeholder-stone-600 focus:outline-none focus:border-[#9B8B6E] dark:focus:border-[#C4A882] transition-colors"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contact-email" className="block text-xs font-medium text-stone-500 dark:text-stone-400 uppercase tracking-wide mb-2">
+                    Email
+                  </label>
+                  <input
+                    id="contact-email"
+                    name="email"
+                    type="email"
+                    required
+                    value={formState.email}
+                    onChange={handleChange}
+                    placeholder="your@email.com"
+                    className="w-full px-4 py-3 rounded-lg bg-stone-50 dark:bg-[#161412] border border-stone-200 dark:border-[#2E2924] text-stone-900 dark:text-stone-100 text-sm placeholder-stone-400 dark:placeholder-stone-600 focus:outline-none focus:border-[#9B8B6E] dark:focus:border-[#C4A882] transition-colors"
+                  />
                 </div>
               </div>
 
-              {/* Status Block */}
-              <div className="bg-slate-900 dark:bg-cyan-950/20 p-6 rounded-xl border border-slate-800 dark:border-cyan-900/50">
-                <p className="text-xs font-mono text-cyan-500 mb-3">&gt; CURRENT_SEEKING_STATUS:</p>
-                <ul className="text-sm text-slate-300 dark:text-cyan-100 space-y-2 font-mono">
-                  <li className="flex items-center"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2"></span> Software Engineering Roles</li>
-                  <li className="flex items-center"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2"></span> AI/ML Development</li>
-                  <li className="flex items-center"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2"></span> Full-Stack Projects</li>
-                </ul>
+              <div>
+                <label htmlFor="contact-message" className="block text-xs font-medium text-stone-500 dark:text-stone-400 uppercase tracking-wide mb-2">
+                  Message
+                </label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  rows={5}
+                  required
+                  value={formState.message}
+                  onChange={handleChange}
+                  placeholder="Tell me about your project or opportunity..."
+                  className="w-full px-4 py-3 rounded-lg bg-stone-50 dark:bg-[#161412] border border-stone-200 dark:border-[#2E2924] text-stone-900 dark:text-stone-100 text-sm placeholder-stone-400 dark:placeholder-stone-600 focus:outline-none focus:border-[#9B8B6E] dark:focus:border-[#C4A882] transition-colors resize-none"
+                />
               </div>
-            </div>
+
+              <button
+                type="submit"
+                className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 rounded-lg text-sm font-medium hover:bg-stone-700 dark:hover:bg-stone-200 transition-colors duration-200"
+              >
+                <Send size={15} strokeWidth={1.75} />
+                {sent ? 'Opening email client...' : 'Send Message'}
+              </button>
+            </form>
           </div>
 
-          {/* Master CTA */}
-          <div className="mt-12 text-center">
-            <a 
-              href="mailto:sadiakhalil957@gmail.com"
-              className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-cyan-700 to-blue-700 hover:from-cyan-600 hover:to-blue-600 text-white rounded-lg transition-all hover:scale-105 shadow-[0_0_20px_rgba(8,145,178,0.3)] font-bold tracking-wide"
-            >
-              <Mail size={20} />
-              <span>TRANSMIT MESSAGE</span>
-            </a>
-          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="max-w-6xl mx-auto px-6 lg:px-10 mt-24 pt-8 border-t border-stone-200 dark:border-[#252219]">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <p className="text-stone-400 dark:text-stone-500 text-sm">
+            © 2026 Sadia Khalil. All rights reserved.
+          </p>
+          <p className="text-stone-400 dark:text-stone-500 text-sm">
+            Lahore, Pakistan
+          </p>
         </div>
       </div>
     </section>

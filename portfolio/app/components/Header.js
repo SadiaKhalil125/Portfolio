@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { Menu, X, Sun, Moon, Terminal } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
 import { useTheme } from '../contexts/ThemeContext'
 
 const Header = () => {
@@ -9,100 +9,85 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false)
   const { darkMode, toggleTheme } = useTheme()
 
-  // Add shadow on scroll
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
+    const handleScroll = () => setScrolled(window.scrollY > 40)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const navItems = [
-    { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ]
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
-        scrolled 
-          ? 'bg-white/90 dark:bg-[#0f172a]/90 backdrop-blur-md border-cyan-900/10 dark:border-cyan-500/20 py-3' 
-          : 'bg-transparent border-transparent py-5'
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? 'bg-[#F8F6F2]/95 dark:bg-[#0E0D0B]/95 backdrop-blur-md border-b border-stone-200 dark:border-[#252219]'
+          : 'bg-transparent border-b border-transparent'
       }`}
     >
-      <nav className="container mx-auto px-4">
-        <div className="flex items-center justify-between">
-          
-          {/* Logo Area */}
-          <div className="flex items-center gap-2 group cursor-pointer">
-            <div className="p-1.5 rounded bg-slate-900 dark:bg-cyan-500/10 border border-slate-700 dark:border-cyan-500/30 group-hover:border-cyan-500 transition-colors">
-              <Terminal size={20} className="text-white dark:text-cyan-400" />
-            </div>
-            <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white font-mono">
-              Sadia<span className="text-cyan-600 dark:text-cyan-400"></span>
-            </span>
-          </div>
-          
+      <nav className="max-w-6xl mx-auto px-6 lg:px-10">
+        <div className="flex items-center justify-between h-16">
+
+          {/* Wordmark */}
+          <a
+            href="#home"
+            className="font-semibold text-stone-900 dark:text-stone-100 tracking-tight text-[1.0625rem]"
+            style={{ fontFamily: 'Inter Tight, sans-serif' }}
+          >
+            Sadia Khalil
+          </a>
+
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8 items-center">
+          <div className="hidden md:flex items-center gap-7">
             {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-sm font-medium uppercase tracking-wider text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-200 relative group"
-              >
+              <a key={item.name} href={item.href} className="nav-link">
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-600 dark:bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
-            
-            <div className="h-6 w-px bg-slate-300 dark:bg-slate-700 mx-2"></div>
-
-            {/* Theme Toggle Button */}
+            <div className="w-px h-4 bg-stone-300 dark:bg-stone-700 mx-1" />
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors border border-transparent hover:border-slate-300 dark:hover:border-slate-600"
+              className="p-1.5 rounded-md text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors"
               aria-label="Toggle theme"
             >
-              {darkMode ? (
-                <Sun size={18} />
-              ) : (
-                <Moon size={18} />
-              )}
+              {darkMode ? <Sun size={15} strokeWidth={1.75} /> : <Moon size={15} strokeWidth={1.75} />}
             </button>
           </div>
 
-          {/* Mobile Menu Button and Theme Toggle */}
-          <div className="md:hidden flex items-center space-x-4">
+          {/* Mobile Controls */}
+          <div className="md:hidden flex items-center gap-1">
             <button
               onClick={toggleTheme}
-              className="text-slate-700 dark:text-slate-300"
+              className="p-2 text-stone-500 dark:text-stone-400"
+              aria-label="Toggle theme"
             >
-              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+              {darkMode ? <Sun size={16} /> : <Moon size={16} />}
             </button>
-            
             <button
-              className="text-slate-900 dark:text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 text-stone-800 dark:text-stone-200"
+              aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] absolute left-0 right-0 px-4 shadow-xl">
-            <div className="flex flex-col space-y-4">
+          <div className="md:hidden absolute left-0 right-0 top-16 bg-[#F8F6F2] dark:bg-[#0E0D0B] border-b border-stone-200 dark:border-[#252219] px-6 py-6 shadow-sm">
+            <div className="flex flex-col gap-5">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-medium py-2 border-l-2 border-transparent hover:border-cyan-500 pl-3 transition-all"
+                  className="text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-stone-100 text-[0.9375rem] transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
